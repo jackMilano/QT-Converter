@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Converter</class>
+ <widget class="QMainWindow" name="Converter">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>960</width>
+    <height>540</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Currencies converter</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	background-color: #0f0401;
+}
+
+QLineEdit {
+	background-color: white;
+	border-radius: 3px;
+    padding: 6px;
+}
+
+
+QComboBox {
+    background-color: #EC5637;
+    border-radius: 3px;
+    color: #fff;
+    min-width: 7em;
+    padding: 6px;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+
+    background-color: #EC5637;
+    color: #fff;
+
+    selection-background-color: #fff;
+    selection-color: #000;
+}
+
+QComboBox::drop-down {
+    background-color: #EC5637;
+    padding: 6px;
+    width: 15px;
+
+    border-bottom-right-radius: 3px;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-top-right-radius: 3px;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="minimumSize">
+    <size>
+     <width>160</width>
+     <height>160</height>
+    </size>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>931</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string>1.0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QComboBox" name="comboBox"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="text">
+        <string>1.0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QComboBox" name="comboBox_2"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
