@@ -270,7 +270,12 @@ const int Converter::ConvertStringToNumber(const QString &inputText)
     const char *inputTextCharArray = qByteArray.data();
 
     double num = -1.0f;
-    sscanf_s(inputTextCharArray, "%lf", &num);
+    int sscanfRetVal = sscanf_s(inputTextCharArray, "%lf", &num);
+
+    if(sscanfRetVal == 0 || sscanfRetVal == EOF)
+    {
+        return 0;
+    }
 
     return num;
 }
