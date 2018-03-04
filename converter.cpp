@@ -48,7 +48,6 @@ Converter::Converter(QWidget *parent) :
     connect(_ui->comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(ChangeCurrencyComboBox(const int)));
     connect(_ui->comboBox_2, SIGNAL(currentIndexChanged(int)), this, SLOT(ChangeCurrencyComboBox(const int)));
 
-
     // Showing default message in the status bar
     statusBar()->showMessage(tr("Insert the value you want to convert"));
 
@@ -194,10 +193,7 @@ void Converter::HandleEnteredText(const QString &inputText, QLineEdit * const qL
     const int otherIndex = _isFirstLineEdit ? _currentIndexComboBox2 : _currentIndexComboBox1;
 
     // The input is converted into a number.
-    const QByteArray qByteArray = inputText.toLatin1();
-    const char *inputTextCharArray = qByteArray.data();
-
-    sscanf(inputTextCharArray, "%lf", &_inputNumber);
+    _inputNumber = ConvertStringToNumber(inputText);
 
     // Disabling qLineEditInput
     DisableLineEdit(qLineEdit);
@@ -267,4 +263,15 @@ void Converter::EnableLineEdit(QLineEdit * const qLineEdit)
     return;
 }
 
+const int Converter::ConvertStringToNumber(const QString &inputText)
+{
+    const QByteArray qByteArray = inputText.toLatin1();
+
+    const char *inputTextCharArray = qByteArray.data();
+
+    double num = -1.0f;
+    sscanf_s(inputTextCharArray, "%lf", &num);
+
+    return num;
+}
 

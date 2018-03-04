@@ -85,6 +85,7 @@ private:
     void DisableLineEdit(QLineEdit * const qLineEdit);
     void EnableLineEdit(QLineEdit * const qLineEdit);
     void HandleEnteredText(const QString &inputText, QLineEdit * const qLineEdit, QLineEdit * const otherQLineEdit);
+    const int ConvertStringToNumber(const QString &inputText);
 };
 
 #endif // CONVERTER_H
