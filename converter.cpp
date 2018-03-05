@@ -53,6 +53,9 @@ Converter::Converter(QWidget *parent) :
 
     // The second qLineEdit start disabled
     DisableLineEdit(_ui->lineEdit_2);
+
+    // First conversion starts as soon the program begins
+    HandleEnteredText(_ui->lineEdit->text(), _ui->lineEdit, _ui->lineEdit_2);
 }
 
 Converter::~Converter()
