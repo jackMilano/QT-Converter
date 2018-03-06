@@ -266,7 +266,7 @@ void Converter::EnableLineEdit(QLineEdit * const qLineEdit)
     return;
 }
 
-const int Converter::ConvertStringToNumber(const QString &inputText)
+const double Converter::ConvertStringToNumber(const QString &inputText)
 {
     const QByteArray qByteArray = inputText.toLatin1();
 
